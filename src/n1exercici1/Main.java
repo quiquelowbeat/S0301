@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { // PATRÓN SINGLETON
 	
 		Scanner entrada = new Scanner(System.in);
 		int intOption = 0;

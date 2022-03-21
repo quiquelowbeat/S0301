@@ -10,6 +10,8 @@ public class Entry {
 	private PhoneNumber entryPhoneNumber;
 	private static ArrayList<Entry> arrayEntries = new ArrayList<Entry>();
 	
+	// He corregido el método constructor de la class Entry. Ahora pasamos la factoría como argumento para que use el método de la factoría en función del país.
+	
 	public Entry(AsbtractEntryFactory factory) {
 		
 		entryAddress = factory.createAddress();

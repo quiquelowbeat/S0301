@@ -8,7 +8,7 @@ import n3exercici1_vehicles.VehicleFactory;
 
 public class MainParking {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { // PATRÓN COMMAND
 	
 		// Creamos una fábrica de vehículos para practicar con el patrón "Factory".
 		
@@ -19,7 +19,7 @@ public class MainParking {
 		Vehicle boat1 = vehicleFactory.getVehicle("boat");
 		Vehicle plane1 = vehicleFactory.getVehicle("plane");
 		
-		// Creamos los comandos StartEngine.
+		// Creamos los comandos StartEngine pasando el vehículo como argumento.
 		
 		StartEngine startCar = new StartEngine(car1);
 		StartEngine startBicycle = new StartEngine(bicycle1);

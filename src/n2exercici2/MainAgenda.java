@@ -12,7 +12,7 @@ import n2Products.SpainAddress;
 import n2Products.UsaAddress;
 import n2Products.UsaPhoneNumber;
 
-public class MainAgenda {
+public class MainAgenda { 
 	
 	// Creamos inicialmente las factorías que crearán objetos Address y PhoneNumber a partir de la factoría abstracta según el formato de país.	
 	
@@ -20,7 +20,7 @@ public class MainAgenda {
 	static AsbtractEntryFactory franceFactory = new FranceEntryFactory();
 	static AsbtractEntryFactory spainFactory = new SpainEntryFactory();
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) { // PATRÓN ABSTRACT FACTORY
 		
 		newEntry(usaFactory, "Henry", "Flemming", "", "Dowling Street",  36, "3L", "98765", "San Francisco", "CA", 600564536);
 		newEntry(franceFactory, "Emmanuel", "Macron", "", "Rue de la Marsellesa", 45, "3B", "75004", "Paris", "", 613564216);
@@ -33,11 +33,14 @@ public class MainAgenda {
 	
 	public static void newEntry(AsbtractEntryFactory factory, String name, String lastName, String secondLastName, String street, int building, String floorAndDoor, String zipcode, String city, String state, int phoneNumber) {
 		
+		// Creamos este método para centralizar la creación de nuevas entradas. 
+		// Usamos el casting y los setters para no tener argumentos en el constructor de la interficie Address y dejarla "limpia".
+			
 		Entry entry = new Entry(factory);
 		
 		if(factory instanceof UsaEntryFactory) {
 			
-			((UsaAddress) entry.getEntryAddress()).setAddress(name, lastName, building, street, floorAndDoor, city, state, zipcode);
+			((UsaAddress) entry.getEntryAddress()).setAddress(name, lastName, building, street, floorAndDoor, city, state, zipcode); 
 			((UsaPhoneNumber) entry.getEntryPhoneNumber()).setPhoneNumber(phoneNumber);
 			
 		} else if(factory instanceof FranceEntryFactory) {
