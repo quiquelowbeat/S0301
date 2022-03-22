@@ -1,6 +1,7 @@
 package n2exercici2;
 
 import n2Factories.AsbtractEntryFactory;
+import n2Factories.FactoryProducer;
 import n2Factories.FranceEntryFactory;
 import n2Factories.SpainEntryFactory;
 import n2Factories.UsaEntryFactory;
@@ -14,11 +15,15 @@ import n2Products.UsaPhoneNumber;
 
 public class MainAgenda { 
 	
-	// Creamos inicialmente las factorías que crearán objetos Address y PhoneNumber a partir de la factoría abstracta según el formato de país.	
+	// Creamos inicialmente un "productora" de factorías simple.
 	
-	static AsbtractEntryFactory usaFactory = new UsaEntryFactory();
-	static AsbtractEntryFactory franceFactory = new FranceEntryFactory();
-	static AsbtractEntryFactory spainFactory = new SpainEntryFactory();
+	static FactoryProducer factoryProducer = new FactoryProducer();
+	
+	// A partir de la productora de fábricas creamos la fábrica USA, France y Spain.
+
+	static AsbtractEntryFactory usaFactory = factoryProducer.createFactory(FactoryProducer.countrySelector.USA);
+	static AsbtractEntryFactory franceFactory = factoryProducer.createFactory(FactoryProducer.countrySelector.FRANCE);
+	static AsbtractEntryFactory spainFactory = factoryProducer.createFactory(FactoryProducer.countrySelector.SPAIN);
 	
 	public static void main(String[] args) { // PATRÓN ABSTRACT FACTORY
 		
