@@ -28,8 +28,7 @@ public class FactoryProducer { // SIMPLE FACTORY
 		}
 		
 		return factory;
+		
 	}
-	
-	
 
 }
