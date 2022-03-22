@@ -1,6 +1,6 @@
 package n2exercici2;
 
-import n2Factories.AsbtractEntryFactory;
+import n2Factories.AbstractEntryFactory;
 import n2Factories.FactoryProducer;
 import n2Factories.FranceEntryFactory;
 import n2Factories.SpainEntryFactory;
@@ -21,9 +21,9 @@ public class MainAgenda {
 	
 	// A partir de la productora de fábricas creamos la fábrica USA, France y Spain.
 
-	static AsbtractEntryFactory usaFactory = factoryProducer.createFactory(FactoryProducer.countrySelector.USA);
-	static AsbtractEntryFactory franceFactory = factoryProducer.createFactory(FactoryProducer.countrySelector.FRANCE);
-	static AsbtractEntryFactory spainFactory = factoryProducer.createFactory(FactoryProducer.countrySelector.SPAIN);
+	static AbstractEntryFactory usaFactory = factoryProducer.createFactory(FactoryProducer.countrySelector.USA);
+	static AbstractEntryFactory franceFactory = factoryProducer.createFactory(FactoryProducer.countrySelector.FRANCE);
+	static AbstractEntryFactory spainFactory = factoryProducer.createFactory(FactoryProducer.countrySelector.SPAIN);
 	
 	public static void main(String[] args) { // PATRÓN ABSTRACT FACTORY
 		
@@ -36,7 +36,7 @@ public class MainAgenda {
 		
 	}
 	
-	public static void newEntry(AsbtractEntryFactory factory, String name, String lastName, String secondLastName, String street, int building, String floorAndDoor, String zipcode, String city, String state, int phoneNumber) {
+	public static void newEntry(AbstractEntryFactory factory, String name, String lastName, String secondLastName, String street, int building, String floorAndDoor, String zipcode, String city, String state, int phoneNumber) {
 		
 		// Creamos este método para centralizar la creación de nuevas entradas. 
 		// Usamos el casting y los setters para no tener argumentos en el constructor de la interficie Address y dejarla "limpia".

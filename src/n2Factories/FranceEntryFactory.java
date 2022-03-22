@@ -5,7 +5,7 @@ import n2Products.FranceAddress;
 import n2Products.FrancePhoneNumber;
 import n2Products.PhoneNumber;
 
-public class FranceEntryFactory extends AsbtractEntryFactory {
+public class FranceEntryFactory extends AbstractEntryFactory {
 
 	@Override
 	public Address createAddress() {

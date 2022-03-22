@@ -2,7 +2,7 @@ package n2Products;
 
 import java.util.ArrayList;
 
-import n2Factories.AsbtractEntryFactory;
+import n2Factories.AbstractEntryFactory;
 
 public class Entry {
 	
@@ -12,7 +12,7 @@ public class Entry {
 	
 	// He corregido el método constructor de la class Entry. Ahora pasamos la factoría como argumento para que use el método de la factoría en función del país.
 	
-	public Entry(AsbtractEntryFactory factory) {
+	public Entry(AbstractEntryFactory factory) {
 		
 		entryAddress = factory.createAddress();
 		entryPhoneNumber = factory.createPhoneNumber();
