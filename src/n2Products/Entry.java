@@ -12,7 +12,7 @@ public class Entry {
 	
 	// He corregido el método constructor de la class Entry. Ahora pasamos la factoría como argumento para que use el método de la factoría en función del país.
 	
-	public Entry(AbstractEntryFactory factory) {
+	public Entry(AbstractEntryFactory factory) { // Inyección de dependencias.
 		
 		entryAddress = factory.createAddress();
 		entryPhoneNumber = factory.createPhoneNumber();

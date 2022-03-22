@@ -16,14 +16,11 @@ import n2Products.UsaPhoneNumber;
 public class MainAgenda { 
 	
 	// Creamos inicialmente un "productora" de factorías simple.
-	
-	static FactoryProducer factoryProducer = new FactoryProducer();
-	
 	// A partir de la productora de fábricas creamos la fábrica USA, France y Spain.
 
-	static AbstractEntryFactory usaFactory = factoryProducer.createFactory(FactoryProducer.countrySelector.USA);
-	static AbstractEntryFactory franceFactory = factoryProducer.createFactory(FactoryProducer.countrySelector.FRANCE);
-	static AbstractEntryFactory spainFactory = factoryProducer.createFactory(FactoryProducer.countrySelector.SPAIN);
+	static AbstractEntryFactory usaFactory = FactoryProducer.createFactory(FactoryProducer.countrySelector.USA);
+	static AbstractEntryFactory franceFactory = FactoryProducer.createFactory(FactoryProducer.countrySelector.FRANCE);
+	static AbstractEntryFactory spainFactory = FactoryProducer.createFactory(FactoryProducer.countrySelector.SPAIN);
 	
 	public static void main(String[] args) { // PATRÓN ABSTRACT FACTORY
 		

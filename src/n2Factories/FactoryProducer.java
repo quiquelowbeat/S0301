@@ -4,7 +4,7 @@ public class FactoryProducer { // SIMPLE FACTORY
 	
 	public enum countrySelector {USA, FRANCE, SPAIN};
 	
-	public AbstractEntryFactory createFactory(countrySelector selec) {
+	public static AbstractEntryFactory createFactory(countrySelector selec) {
 		
 		AbstractEntryFactory factory = null;
 		
